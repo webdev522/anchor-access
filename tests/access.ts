@@ -25,9 +25,7 @@ describe("access", () => {
 
     const account = await program.account.counter.fetch(counter.publicKey);
     assert.ok(account.authority.equals(provider.wallet.publicKey));
-    console.log("555");
     assert.ok(account.count.toNumber() === 0);
-    console.log("666");
   });
 
   it("Updates a counter", async () => {
@@ -41,6 +39,6 @@ describe("access", () => {
     const account = await program.account.counter.fetch(counter.publicKey);
 
     assert.ok(account.authority.equals(provider.wallet.publicKey));
-    assert.ok(account.count.toNumber() == 1);
+    assert.ok(account.count.toNumber() === 1);
   });
 });
